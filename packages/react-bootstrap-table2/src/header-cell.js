@@ -46,7 +46,7 @@ class HeaderCell extends eventDelegater(React.Component) {
     const cellAttrs = {
       ..._.isFunction(headerAttrs) ? headerAttrs(column, index) : headerAttrs,
       ...delegateEvents,
-      tabIndex: 0
+      tabIndex: headerAttrs.tabindex >= 0 ? 0 : headerAttrs.tabindex
     };
 
     let sortSymbol;
